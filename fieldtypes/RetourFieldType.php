@@ -133,7 +133,8 @@ class RetourFieldType extends BaseFieldType
             $result = new Retour_RedirectsFieldModel($value);
         }
         $urlParts = parse_url($this->element->url);
-        $url = $urlParts['path'] ? '/' . $urlParts['path'] : $this->element->url;
+        $slash = substr($urlParts['path'], 0, 1) === '/' ? '' : '/';
+        $url = $urlParts['path'] ? $slash . $urlParts['path'] : $this->element->uri;
         $result->redirectDestUrl = $url;
         $result->associatedElementId = $this->element->id;
         if ($this->model->translatable)

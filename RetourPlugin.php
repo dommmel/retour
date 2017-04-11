@@ -168,7 +168,7 @@ class RetourPlugin extends BasePlugin
      */
     public function getReleaseFeedUrl()
     {
-        return 'https://raw.githubusercontent.com/nystudio107/retour/master/releases.json';
+        return 'https://raw.githubusercontent.com/dommmel/retour/master/releases.json';
     }
 
     /**
